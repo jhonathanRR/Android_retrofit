@@ -15,7 +15,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
 
     private final String baseUrl="http://0.0.0.1:8000/";
+
     List<Auditorio>listaAuditorio= new ArrayList<>();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
         lista.enqueue(new Callback<List<Auditorio>>() {
             @Override
             public void onResponse(Call<List<Auditorio>> call, Response<List<Auditorio>> response) {
+                //validamos si la respuesta es exitosa
                 if(response.isSuccessful()) {
                     listaAuditorio = response.body();
                 }
-
             }
 
             @Override
