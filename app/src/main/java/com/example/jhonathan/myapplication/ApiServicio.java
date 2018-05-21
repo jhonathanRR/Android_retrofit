@@ -5,11 +5,11 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
-public interface AuditorioService {
-
-    @GET("api/events")
-    Call<List<Auditorio>>getAuditorio();
+public interface ApiServicio {
 
     @GET("api/users")
-    Call<List<Evento>>getExample();
+    Call<Evento> getExample();
+
+    @GET("api/events")
+    Call<EventoResponse> getEventos();
 }
